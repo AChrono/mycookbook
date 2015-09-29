@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyCookBook">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Homepage</title>		
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+		<!-- Angularjs -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+
+		<script type="text/javascript" src="javascript/script.js"></script>
+	</head>
+	<body ng-controller="indexController">
+		<!-- Nav bar-->
+		<nav class="navbar navbar-inverse navbav-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="index.html">MyCookBook</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li><a href="about.html">About</a></li>
+					<li><a href="recipes.html">Recipes</a></li>
+				</ul>
+			</div>			
+		</nav>
+
+		<div class="container">
+			<div class="jumbotron">
+				<h1>About</h1>
+				<p>This website is made for reviewing what i have learned about AngularJS and Bootstrap</p>
+			</div>
+			<div class="row">
+				<div ng-repeat="recipe in recipes">
+					<div class="col-md-3">
+						<div class="thumbnail">
+							<img ng-src="{{recipe.img}}">
+							<h3>{{recipe.name}}</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<recipes info="tiramisu"/>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>&copy2015 achrono1311@gmail.com</p>
+			</div>
+		</footer>
+		<!-- jQuery -->
+		<script src="//code.jquery.com/jquery.js"></script>		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<!-- Link to modules -->
+		<script src="javascript/modules/indexController.js"></script>
+		<!-- Link to directive -->
+		<script src="javascript/directives/myApp.js"></script>
+	</body>
+</html>
